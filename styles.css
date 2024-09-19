@@ -1,0 +1,88 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+footer{
+    margin-top: auto;
+}
+.navGlass{
+    backdrop-filter: blur(15px);
+    background-color: rgba(13,202,240,0);
+}
+
+.nav-link{
+    position: relative;
+    transition: all 0.2s;
+}
+
+
+.nav-link::after{
+    content:'';
+    opacity: 0;
+    transition: all 0.7s;
+    height: 1px;
+    width: 100%;
+    background-color:rgb(85,85,85);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after{
+    opacity:1;
+}
+
+.navbar-nav .active { 
+    font-weight: 100;
+    background-color: rgb(70, 70, 70);
+    border-radius: 5px;
+ }
+
+/* img {
+    display: block;
+    max-height: 100px;
+    height: auto; 
+  } */
+
+  h1,h2,h3,h4{
+    color: rgb(85,85,85);
+  }
+
+  .about-header{
+    font-weight: 700;
+    font-size: 7rem;
+    color: rgb(85,85,85);
+    text-align: start;
+  }
+
+  .about-name{
+    font-weight: 700;
+    font-size: 7rem;
+    color:rgb(17,153,238);
+  }
+
+  .about-title{
+    font-weight: 600;
+    font-size: 3rem;
+    color:rgb(85,85,85);
+    line-height: 50px;
+  }
+
+  .about-description{
+    font-weight: 400;
+    font-size: 1.5rem;
+    color:rgb(85,85,85);
+    line-height: 24px;
+    text-align:start;
+  }
+
+  .profile-photo{
+    max-height: 300px;
+    max-width: 300px;
+  }
