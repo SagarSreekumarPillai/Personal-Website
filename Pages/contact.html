@@ -137,38 +137,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b7e4c9729d.js" crossorigin="anonymous"></script>
     <script>
-        const submit = document.getElementById("submit");
+      const submit = document.getElementById("submit");
 
-        submit.addEventListener("click", validate);
+      submit.addEventListener("click", validate);
 
-        function validate(e) {
-        e.preventDefault();
+      function validate(e) {
+      e.preventDefault();
 
-        const name = document.getElementById("validationDefault01");
-        let regex = /^[a-zA-Z]+$/;
-        if (name.value == "") {
-            name.style.border = "red solid 5px";
-            alert("Name must be filled out");
-            document.form.validationDefault01.focus();
-            return false;
-        }else if(!regex.test(name.value)){
-            alert("Use only letters");
-        }
-        name.style.border = "transparent solid 5px";
-        return valid;
-        // let valid = true;
+      const name = document.getElementById("validationDefault01");
+      let regex = /^[a-zA-Z]+$/;
+      if (name.value == "") {
+          name.style.border = "red solid 5px";
+          alert("Name is mandatory");
+          document.form.validationDefault01.focus();
+          return false;
+      }else if(!regex.test(name.value)){
+          name.style.border = "red solid 5px";
+          alert("Enter a valid name");
+      }
+      name.style.border = "green solid 5px";
 
-        // if (!Name.value) {
-        //     const nameError = document.getElementById("nameError");
-        //     nameError.classList.add("visible");
-        //     validationDefault01.classList.add("invalid");
-        //     nameError.setAttribute("aria-hidden", false);
-        //     nameError.setAttribute("aria-invalid", true);
-        // }
+      const email = document.getElementById("validationDefault02");
+      regex = /^[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+      if (email.value == "") {
+          email.style.border = "red solid 5px";
+          alert("email is mandatory");
+          document.form.validationDefault02.focus();
+          return false;
+      }else if(!regex.test(email.value)){
+          email.style.border = "red solid 5px";
+          alert("Enter a valid email");
+      }
+      email.style.border = "green solid 5px";
 
-        // let x = document.forms["myForm"]["fname"].value;
+      const message = document.getElementById("validationDefault03");
+      if (message.value == "") {
+        message.style.border = "red solid 5px";
+          alert("Message is mandatory");
+          document.form.validationDefault03.focus();
+          return false;
+      }
+      message.style.border = "green solid 5px";
 
-        }
-    </script>
+      return valid;
+      }
+  </script>
 </body>
 </html>
